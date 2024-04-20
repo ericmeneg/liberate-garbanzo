@@ -43,7 +43,45 @@ def species_det():
         species = "Minior"
         genderless = True
     print(species)
-    return genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two
+    return genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two,species
+
+def ability_def(species):
+    ability_check = random.randrange(1,3)
+    if species == "Fearow":
+        ability = "Keen Eye"
+    elif species == "Ditto":
+        ability = "Limber"
+    elif species == "Skarmory" and ability_check == 1:
+        ability = "Keen Eye"
+    elif species == "Skarmory" and ability_check == 2:
+        ability = "Sturdy"
+    elif species == "Elekid":
+        ability = "Static"
+    elif species == "Beldum":
+        ability = "Clear body"
+    elif species == "Elgyem" and ability_check == 1:
+        ability = "Telepathy"
+    elif species == "Elgyem" and ability_check == 2:
+        ability = "Synchronize"
+    elif species == "Minior":
+        ability = "Shields down"
+    print("It's ability is",ability)
+
+def form_det():
+    color = random.randrange(1,7)
+    if color == 1:
+        color = "red"
+    if color == 2:
+        color = "orange"
+    if color == 3:
+        color = "yellow"
+    if color == 4:
+        color = "green"
+    if color == 5:
+        color = "blue"
+    if color == 6:
+        color = "violet"
+    print("It has a",color,"core")
 
 def held_item(held_item_odds,held_item_type,held_item_odds_two,held_item_type_two):
     check = random.randrange(1,101)
@@ -96,9 +134,12 @@ def nature_det():
         affected_stat = "Spe"
     return affected_stat
 
-genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two = species_det()
+'''genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two,species = species_det()
 level_det()
 gender_det(genderless)
+ability_def(species)
+if species == "Minior":
+    form_det()
 held_item(held_item_odds,held_item_type,held_item_odds_two,held_item_type_two)
 shininess_check()
 iv_gen("HP")
@@ -112,15 +153,18 @@ raised_stat = nature_det()
 if lowered_stat == raised_stat:
     print("The pokemon's nature will not affect it's stats")
 else:
-    print("The pokemon's nature will lower it's",lowered_stat,"and raise it's",raised_stat)
+    print("The pokemon's nature will lower it's",lowered_stat,"and raise it's",raised_stat)'''
 
 #If the following lines are habilitated then the code will run until a shiny pokemon is found, that can be used to simulate a shiny hunt:
-'''count = 0
+count = 0
 while True:
     count += 1
-    genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two = species_det()
+    genderless,held_item_odds,held_item_type,held_item_odds_two,held_item_type_two,species = species_det()
     level_det()
     gender_det(genderless)
+    ability_def(species)
+    if species == "Minior":
+        form_det()
     held_item(held_item_odds,held_item_type,held_item_odds_two,held_item_type_two)
     shiny = shininess_check()
     iv_gen("HP")
@@ -135,7 +179,8 @@ while True:
         print("The pokemon's nature will not affect it's stats")
     else:
         print("The pokemon's nature will lower it's",lowered_stat,"and raise it's",raised_stat)
+    print("====================================================================")
 
     if shiny == True:
         print("Shiny found after",count,"encounters")
-        break'''
+        break
