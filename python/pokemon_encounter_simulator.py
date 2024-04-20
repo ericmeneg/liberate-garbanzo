@@ -85,7 +85,7 @@ def nature_det():
     affected_stat = random.choice(stats)
     return affected_stat
 
-'''species,genderless = species_det()
+species,genderless = species_det()
 level_det()
 gender_det(genderless)
 ability_def(species)
@@ -104,10 +104,10 @@ raised_stat = nature_det()
 if lowered_stat == raised_stat:
     print("The pokemon's nature will not affect it's stats")
 else:
-    print("The pokemon's nature will lower it's",lowered_stat,"and raise it's",raised_stat)'''
+    print("The pokemon's nature will lower it's",lowered_stat,"and raise it's",raised_stat)
 
 #If the following lines are habilitated then the code will run until a shiny pokemon is found, that can be used to simulate a shiny hunt:
-count = 0
+'''count = 0
 while True:
     count += 1
     species,genderless = species_det()
@@ -134,4 +134,4 @@ while True:
 
     if shiny == True:
         print("Shiny found after",count,"encounters")
-        break
+        break'''
