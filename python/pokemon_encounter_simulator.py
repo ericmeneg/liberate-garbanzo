@@ -33,9 +33,9 @@ def ability_def(species):
     print("It's ability is",ability)
 
 def form_det():
-    color_pool = ["red","orange","yellow","green","blue","violet"]
+    color_pool = [" red","n orange"," yellow"," green"," blue"," violet"]
     color = random.choice(color_pool)
-    print("It has a",color,"core")
+    print("It has a"+color,"core")
 
 def held_item(species):
     itemcheck = random.randrange(1,101)
@@ -44,7 +44,7 @@ def held_item(species):
         item = "Sharp Beak"
     if species == "Ditto":
         itempool = ["Quick Powder","Metal Powder", None]
-        item = random.choices(itempool, weights=(50,5,45))
+        item = random.choices(itempool, weights=(50,5,45))[0]
     if species == "Skarmory" and itemcheck<=5:
         item = "Metal Coat"
     if species == "Elekid" and itemcheck<=5:
