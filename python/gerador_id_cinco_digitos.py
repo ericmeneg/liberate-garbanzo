@@ -5,11 +5,11 @@ def gen_num():
     return str(num)
 
 def gen_id():
-    primeiro = gen_num()
-    segundo = gen_num()
-    terceiro = gen_num()
-    quarto = gen_num()
-    quinto = gen_num()
-    print(primeiro+segundo+terceiro+quarto+quinto)
+    id = gen_num()
+    while True:
+        id = id + gen_num()
+        if len(id)== 5:
+            break
+    return id
 
-gen_id()
+print(gen_id())
